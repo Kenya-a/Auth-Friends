@@ -3,7 +3,7 @@ import {
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE,
     
-} from '../actions/actions'
+} from '../components/actions/actions'
 
 
 export const initialState = {
