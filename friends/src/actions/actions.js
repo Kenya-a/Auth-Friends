@@ -1,4 +1,5 @@
-import axios from "axios";
+//import {axiosWithAuth} from '../utils/axiosWithAuth'
+import axios from 'axios';
 
 export const FETCH_DATA_START = 'FETCH_DATA_START';
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
@@ -7,8 +8,8 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE';
 export const submitButton = () => {
     return dispatch => {
         dispatch({type: FETCH_DATA_START});
-
-        axios.get(`http://localhost:5000/friends`)
+        axios
+        .get(`http://localhost:5000/api/friends`)
 
             .then(response => {
                 console.log('Axios.get Response:', response.data)

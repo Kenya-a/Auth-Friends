@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Login({values, errors, touched}){
+function Login({ errors, touched, ...props}){
 
     return <div className = 'form'>
         <Form>
@@ -53,15 +53,22 @@ const FormikLogin = withFormik({
         };
     },
 
-    handleSubmit(values, { resetForm }){
+    handleSubmit(values, {resetForm}, {...props} ){
 
-        console.log('Handle Submit Values:',values)
+        console.log('Handle Submit Values:',props)
 
         axios.post('http://localhost:5000/api/login', values)
 
         .then(response => {
             console.log('Axios.post Response:', response)
-            resetForm();
+            if(response.status === 200 && response.data) {
+                localStorage.setItem('token', JSON.stringify(response.data))
+                resetForm();
+                props.history.push('/api/friends')
+           
+            }
+            // localStorage.setItem('token', JSON.stringify(response.data))
+            // resetForm();
         })
 
         .catch(error => {

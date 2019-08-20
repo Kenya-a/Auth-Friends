@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Regristration({values, errors, touched}){
+function Regristration({errors, touched}){
 
     return <div className = 'form'>
         <Form>

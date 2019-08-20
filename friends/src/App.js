@@ -6,12 +6,10 @@ import Regristration from './components/Regristration'
 import {Route} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute'
 import FriendsList from './components/FriendsList'
-import { axiosWithAuth } from './utils/axiosWithAuth'
 
 function App() {
   return (
     <div className="App">
-      {/* <FriendsList/> */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Route exact path = '/' component = {Login} />

@@ -3,13 +3,14 @@ import {
     FETCH_DATA_SUCCESS,
     FETCH_DATA_FAILURE,
     
-} from '../components/actions/actions'
+} from '../actions/actions'
 
 
 export const initialState = {
     friends: [],
     test: 'Friends',
-    error: ''
+    error: '',
+    isLoading: false
 }
 
 export const reducer = (state = initialState, action) => {
