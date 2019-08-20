@@ -1,8 +1,11 @@
 import React from 'react';
 import { withFormik,Form, Field} from 'formik';
 
- import * as Yup from 'yup';
- import axios from 'axios';
+import * as Yup from 'yup'; 
+import axios from 'axios';
+
+import { Link } from 'react-router-dom';
+
 
 
 function Regristration({values, errors, touched}){
@@ -38,6 +41,10 @@ function Regristration({values, errors, touched}){
           </div>
 
             <button type = 'submit'>Submit</button>
+
+            <div>
+                Already have a Friend? Login <Link to = '/'>Here</Link>
+            </div>
 
         </Form>
 

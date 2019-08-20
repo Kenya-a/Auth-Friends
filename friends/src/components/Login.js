@@ -1,8 +1,11 @@
 import React from 'react';
 import { withFormik,Form, Field} from 'formik';
 
- import * as Yup from 'yup';
- import axios from 'axios';
+import * as Yup from 'yup';
+import axios from 'axios';
+
+import { Link } from 'react-router-dom';
+
 
 
 function Login({values, errors, touched}){
@@ -30,6 +33,11 @@ function Login({values, errors, touched}){
 
             <button type = 'submit'>Submit</button>
 
+
+            <div>
+               Want to join the Friends List? Register <Link to = '/register'>Here</Link>
+            </div>
+
         </Form>
 
 
@@ -49,7 +57,7 @@ const FormikLogin = withFormik({
 
         console.log('Handle Submit Values:',values)
 
-        axios.post('http://localhost:5000/api/register', values)
+        axios.post('http://localhost:5000/api/login', values)
 
         .then(response => {
             console.log('Axios.post Response:', response)
